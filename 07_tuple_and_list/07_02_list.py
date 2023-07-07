@@ -68,3 +68,69 @@ print(sep)
 # print(marxes[5])
 
 
+# スライスによる要素の取り出し
+# スライスを使うことによってリストのサブシーケンスを取り出すことができる
+# リストのスライスもリストで返される
+marxes = ['Groucho', 'Chico', 'Harpo']
+print(marxes[0:2])
+
+# スライスは1以外のステップを指定できる
+# 以下はリストを書き換えていない
+print(marxes[::2])
+print(marxes[::-2])
+print(marxes[::-1])
+
+# スライスは無効なインデックスを指定しても例外が発生しない。もっとも近い有効なインデックスに変身するか何も返さない
+print(marxes[4:])
+print(marxes[-6:])
+print(marxes[-6:-2])
+print(marxes[-6:-4])
+
+# リストを直接逆順に書き換えるには、list.reverse()を使う
+# revers()メソッドは、リストを書き換えるが値を返さない
+marxes.reverse()
+print(marxes)
+
+
+# append()による末尾への要素の追加
+# append()メソッドはリストの末尾に1つずつ要素を追加していく
+marxes = ['Groucho', 'Chico', 'Harpo']
+marxes.append('Zeppo')
+print(marxes)
+
+
+# insert()によるオフセットを指定した要素の追加
+# insert()は、オフセットを指定し、その前に要素を追加する
+# 末尾を超えるオフセットを指定した場合は、append()と同じ動きをとる
+marxes = ['Groucho', 'Chico', 'Harpo']
+marxes.insert(2, 'Gummo')
+print(marxes)
+marxes.insert(10, 'Zeppo')
+print(marxes)
+
+
+# *による全要素の繰り返し
+print(["blah"] * 3)
+
+
+# extend()または+=によるリストの結合
+# extend()を使えば、他のリストを1つにまとめることができる
+marxes = ['Groucho', 'Chico', 'Harpo']
+others = ['Gummo', 'Zeppo']
+marxes.extend(others)
+print(marxes)
+
+# + や +=でも連結することができる
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+others = ['Gummo', 'Karl']
+marxes += others
+print(marxes)
+
+# append()を使うとothersの要素を追加するのではなく、othersを1つの要素として追加する
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+others = ['Gummo', 'Karl']
+marxes.append(others)
+print(marxes)
+
+
+# offsetによる要素の書き換え
