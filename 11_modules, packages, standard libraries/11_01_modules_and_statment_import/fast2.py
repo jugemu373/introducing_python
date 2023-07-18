@@ -1,0 +1,16 @@
+"""
+fast.pyは、以下のようにファイルの先頭ではなく、pick()関数の中からrandomをインポートするように書いてもよい。
+"""
+places = [
+    "McDonalds",
+    "KFC",
+    "Burger King",
+    "Taco Bell",
+    "Wendys",
+    "Arbys",
+    "Pizza Hut"
+]
+
+def pick():
+    import random
+    return random.choice(places)
